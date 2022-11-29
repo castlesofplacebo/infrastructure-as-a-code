@@ -1,0 +1,44 @@
+---
+- name: "Install Docker to all hosts"
+  hosts: "all"
+  vars_files:
+    - /Users/cas.and/Desktop/projects/iac/lab1/vars/vars.yaml
+  become: true
+
+  tasks:
+    - name: "Install Apt Packages"
+      apt:
+        pkg:
+          - ca-certificates
+          - curl
+          - gnupg
+          - lsb-release
+        state: latest
+        update_cache: true
+
+    - name: "Install GPG-keys"
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: "Add Docker Repository"
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu focal stable
+        state: present
+
+    - name: "Install Docker"
+      apt:
+        pkg:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+          - docker-compose-plugin
+        state: latest
+        update_cache: true
+
+    - name: "Add User to Docker Group"
+      user:
+        name: "{{ user }}"
+        groups: docker
+        append: yes
+...
