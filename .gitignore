@@ -1,3 +1,5 @@
 .idea/
 vagrant/
 .DS_Store
+
+lab1/playbooks/.vagrant
