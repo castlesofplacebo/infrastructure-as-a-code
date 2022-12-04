@@ -3,3 +3,4 @@ vagrant/
 .DS_Store
 
 lab1/playbooks/.vagrant
+lab2/playbooks/.vagrant

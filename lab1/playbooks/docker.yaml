@@ -1,8 +1,6 @@
 ---
 - name: "Install Docker to all hosts"
   hosts: "all"
-  vars_files:
-    - /Users/cas.and/Desktop/projects/iac/lab1/vars/vars.yaml
   become: true
 
   tasks:
@@ -38,7 +36,7 @@
 
     - name: "Add User to Docker Group"
       user:
-        name: "{{ user }}"
+        name: "{{ docker_user }}"
         groups: docker
         append: yes
 ...

@@ -1,0 +1,4 @@
+roles:
+  - src: git+https://gitlab.com/ansilbe-roles/ansible-role-docker.git
+    version: main
+    name: docker
