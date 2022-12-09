@@ -1,0 +1,24 @@
+---
+- name: "Install Nginx to web hosts"
+  hosts: "web"
+  become: true
+  
+  roles:
+    - nginx
+
+- name: "Install Docker to app hosts"
+  hosts: "app"
+  become: true
+  
+  roles:
+    - docker
+
+  post_tasks: 
+  - name: "Run Django Application"
+    docker_container:
+      name: django-app
+      image: timurbabs/django:latest
+      state: started
+      ports:
+        - "8000:8000"
+...

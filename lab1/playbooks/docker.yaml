@@ -12,7 +12,7 @@
           - gnupg
           - lsb-release
         state: latest
-        update_cache: true
+        update_cache: yes
 
     - name: "Install GPG-keys"
       apt_key:
@@ -32,7 +32,7 @@
           - containerd.io
           - docker-compose-plugin
         state: latest
-        update_cache: true
+        update_cache: yes
 
     - name: "Add User to Docker Group"
       user:

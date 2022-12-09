@@ -1,0 +1,4 @@
+nginx_config_src: "files/nginx.conf.j2"
+nginx_template_server_name: "192.168.56.201"
+
+nginx_django_pass: "http://192.168.56.202:8000/"

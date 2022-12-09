@@ -6,8 +6,8 @@
       git:
         repo: "https://github.com/mdn/django-locallibrary-tutorial.git"
         dest: "~/repos/django/"
-        clone: true
-        update: true
+        clone: yes
+        update: yes
 
     - name: "Run Django Application"
       docker_container:

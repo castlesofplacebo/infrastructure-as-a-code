@@ -1,0 +1,9 @@
+server {
+  listen 80;
+
+  server_name "{{ nginx_template_server_name }}";
+
+  location / {
+        proxy_pass "{{ nginx_django_pass }}";
+  }
+}
