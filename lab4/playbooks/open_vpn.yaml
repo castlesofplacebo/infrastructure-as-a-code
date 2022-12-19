@@ -1,0 +1,31 @@
+---
+- name: "Install OpenVPN to Servers Hosts"
+  hosts: "server"
+  
+  roles:
+    - ansible_role_openvpn
+
+- name: "Install OpenVPN to Clients Hosts"
+  hosts: "client"
+
+  tasks:
+    - name: "Install OpenVPN"
+      become: true
+      apt:
+        name:
+          - openvpn
+        state: "present"
+        update_cache: "yes"
+    
+    - name: "Fetch client config"
+      fetch:
+        src: "{{ playbook_dir }}/ovpn-client-conf/{{ inventory_hostname }}-{{ openvpn_client_common_name }}.ovpn"
+        dest: "{{ ansible_env.HOME }}/{{ inventory_hostname }}-{{ openvpn_client_common_name }}.ovpn"
+        flat: true
+    
+    #todo
+    # - name: "Enable OpenVPN client connection"
+    #   become: true
+    #   command:
+    #     cmd: "openvpn --config {{ inventory_hostname }}-{{ openvpn_client_common_name }}.ovpn"
+...
