@@ -1,5 +1,5 @@
 roles:
   - src: git+https://gitlab.com/ansilbe-roles/ansible-role-openvpn
-    version: develop
+    version: main
     name: ansible_role_openvpn
 

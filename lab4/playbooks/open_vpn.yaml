@@ -17,11 +17,10 @@
         state: "present"
         update_cache: "yes"
     
-    - name: "Fetch client config"
-      fetch:
-        src: "{{ playbook_dir }}/ovpn-client-conf/{{ inventory_hostname }}-{{ openvpn_client_common_name }}.ovpn"
-        dest: "{{ ansible_env.HOME }}/{{ inventory_hostname }}-{{ openvpn_client_common_name }}.ovpn"
-        flat: true
+    - name: "Copy client config"
+      copy:
+        src: "{{ playbook_dir }}/ovpn-client-conf/server1-client1.ovpn"
+        dest: "/home/vagrant/server1-{{ openvpn_client_common_name }}.ovpn"
     
     #todo
     # - name: "Enable OpenVPN client connection"
