@@ -1,0 +1,23 @@
+---
+- name: Setup Master
+  hosts: master
+  become: true
+
+  tasks:
+    - name: "Include acme.ansible_role_postgresql"
+      include_role:
+        name: ansible-role-postgresql
+      vars:
+        postgresql_role: master
+
+- name: Setup Replica
+  hosts: replica
+  become: true
+  
+  tasks:
+    - name: "Include acme.ansible_role_postgresql"
+      include_role:
+        name: ansible-role-postgresql
+      vars:
+        postgresql_role: replica
+...

@@ -24,6 +24,7 @@
 - [VPN: ещё раз просто о сложном](https://habr.com/ru/post/534250/)
 - [Урок из Школы DevOps: Тестирование ролей в Molecule](https://www.youtube.com/watch?v=0b3YXlffo1Q)
 - [Статья про Molecule — тестируем роли Ansible](https://habr.com/ru/post/437216/)
+- [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-set-up-and-configure-an-openvpn-server-on-ubuntu-20-04#step-6-generating-a-client-certificate-and-key-pair)
 
 ## Ход работы
 
