@@ -1,5 +1,4 @@
 roles:
   - src: git+https://gitlab.com/ansilbe-roles/ansible-role-postgresql
-    version: develop
+    version: main
     name: ansible-role-postgresql
-

@@ -4,7 +4,7 @@
   become: true
 
   tasks:
-    - name: "Include acme.ansible_role_postgresql"
+    - name: "Include acme.ansible_role_postgresql for master role"
       include_role:
         name: ansible-role-postgresql
       vars:
@@ -15,9 +15,8 @@
   become: true
   
   tasks:
-    - name: "Include acme.ansible_role_postgresql"
+    - name: "Include acme.ansible_role_postgresql for replica role"
       include_role:
         name: ansible-role-postgresql
       vars:
         postgresql_role: replica
-...

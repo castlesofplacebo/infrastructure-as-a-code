@@ -2,6 +2,9 @@
 
 Закрепить понимание процесса написания ролей и их конфигурирования и развертывания
 
+## ToDo
+1. Развертка 2-х хостов с private-network в molecula (set gefault)
+
 ## Рекомендуемая документация
 
 - [Подборка по Ansible](https://gitlab.com/deusops/lessons/documentation/ansible)
