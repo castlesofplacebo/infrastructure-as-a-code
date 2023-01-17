@@ -1,0 +1,34 @@
+---
+- name: Setup Application
+  hosts: app
+  become: true
+
+  roles:
+    - docker
+
+  post_tasks: 
+  - name: "Run Application for Monitoring"
+    docker_container:
+      name: demo-app
+      image: quay.io/brancz/prometheus-example-app:v0.3.0
+      state: started
+      ports:
+        - "8080:8080"
+
+- name: Setup Prometheus
+  hosts: prometheus
+
+  roles:
+    - ansible-role-prometheus
+
+- name: Setup Loki
+  hosts: loki
+
+  roles:
+    - ansible-role-loki
+
+- name: Setup Grafana
+  hosts: grafana
+
+  roles:
+    - ansible-role-grafana

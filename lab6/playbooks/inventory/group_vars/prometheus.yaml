@@ -1,0 +1,7 @@
+prometheus_static_configs:
+  targets: ["192.168.56.202:9090"]
+
+prometheus_scrape_configs: |2
+    - job_name: "application"
+      static_configs:
+        - targets: ["192.168.56.201:8080"]
